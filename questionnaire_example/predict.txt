@@ -1,0 +1,9 @@
+SELECT customer_id,  customer_name FROM customers WHERE customer_address LIKE "%WY%" AND payment_method_code != "Credit Card
+
+SELECT DISTINCT product_name FROM products ORDER BY product_name
+
+SELECT city, COUNT(*) FROM station GROUP BY city HAVING COUNT(*) >= 15
+
+SELECT t2.team_name FROM university AS t1 JOIN basketball_match AS t2 ON t1.school_id  =  t2.school_id WHERE enrollment < (SELECT avg(enrollment) FROM university)
+
+SELECT T2.song_name FROM files AS T1 JOIN song AS T2 ON T1.f_id  =  T2.f_id WHERE T1.duration LIKE "4:%" UNION SELECT song_name FROM song WHERE languages  =  "english"
