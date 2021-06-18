@@ -8,13 +8,20 @@ from itertools import product
 from collections import defaultdict
 import tqdm
 import random
-from parse import get_all_preds_for_execution, remove_distinct
+from testsuitesqleval.parse import get_all_preds_for_execution, remove_distinct
 import time
 import pickle as pkl
 import subprocess
 from itertools import chain
 
 
+# Make sure there is always a tmp/ folder
+path = os.path.join(os.getcwd(), 'tmp/')
+
+try: 
+    os.mkdir(path)
+except OSError:
+    pass
 
 threadLock = threading.Lock()
 TIMEOUT = 60
