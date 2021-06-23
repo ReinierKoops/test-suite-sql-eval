@@ -1,6 +1,7 @@
 import os
 import re
 import asyncio
+import nest_asyncio
 import sqlite3
 import threading
 from typing import Tuple, Any, List, Set
@@ -14,6 +15,10 @@ import pickle as pkl
 import subprocess
 from itertools import chain
 
+
+# Fix asnyc bug related to tornado
+# https://stackoverflow.com/questions/56154176/runtimeerror-asyncio-run-cannot-be-called-from-a-running-event-loop
+nest_asyncio.apply()
 
 # Make sure there is always a tmp/ folder
 path = os.path.join(os.getcwd(), 'tmp/')
