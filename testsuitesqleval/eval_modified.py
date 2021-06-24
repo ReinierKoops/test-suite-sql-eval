@@ -494,6 +494,7 @@ def retrieve_gold_list(gold_file):
 def evaluate_string(gold_string, predict_string, db_dir, etype, kmaps):
     
     glist = []
+
     glist.append(gold_string)
 
     # spider formatting indicates that there is only one "single turn"
